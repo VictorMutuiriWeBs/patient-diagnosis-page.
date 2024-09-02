@@ -1,0 +1,258 @@
+/* Base styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Navigation styles */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 160px;
+    margin-right: 10px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    display: flex;
+    align-items: center;
+	padding: 20px;
+}
+
+.nav-links a img {
+    margin-right: 5px;
+}
+
+.container .doctor-info span{
+	font-size: 18px;
+	font-weight: bold;
+}
+
+/* Main content styles */
+main {
+    display: flex;
+    margin-top: 20px;
+}
+
+.column {
+    padding: 20px;
+}
+
+.column-1 {
+    flex: 1;
+}
+
+.column-2 {
+    flex: 2;
+}
+
+.column-3 {
+    flex: 1;
+}
+
+/* Patient list styles */
+.patient-list {
+    margin-top: 20px;
+}
+
+.patient-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.patient-item img {
+    width: 60px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+/* Vital signs styles */
+.vital-signs {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.vital-sign {
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.vital-sign i {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.vital-sign .value {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Table styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+}
+
+/* Patient info styles */
+.patient-info {
+    text-align: center;
+}
+
+.patient-info img {
+    width: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.info-item i {
+    margin-right: 10px;
+}
+
+.more-info-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 1024px) {
+    main {
+        flex-direction: column;
+    }
+	
+	.column-1 .patient-list{
+		display: flex;
+		flex-wrap: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-type: x mandatory;
+	}
+	
+	.column-1 .patient-list .patient-item{
+		flex: 0 0 auto;
+        width: 200px;
+        scroll-snap-align: start;
+	}
+
+    .column {
+        width: 100%;
+    }
+
+    .vital-signs {
+        flex-wrap: wrap;
+    }
+
+    .vital-sign {
+        width: calc(50% - 10px);
+        margin-bottom: 20px;
+    }
+	
+	table{
+		max-width: 100vw;
+	}
+}
+
+@media screen and (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+
+    .doctor-info {
+        display: none;
+    }
+
+    .patient-list {
+        overflow-x: auto;
+    }
+
+    .patient-item {
+        min-width: 250px;
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    .diagnosis-history {
+        max-height: 300px;
+        overflow-y: auto;
+    }
+
+    .diagnosis-history tbody tr:nth-child(n+3) {
+        display: none;
+    }
+
+    .diagnosis-history tbody tr:nth-child(-n+2) {
+        display: table-row;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .vital-sign {
+        width: 100%;
+    }
+
+    .patient-info img {
+        width: 80px;
+    }
+
+    .more-info-btn {
+        width: 100%;
+    }
+}
+/* CSS Document */
+
